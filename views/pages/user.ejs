@@ -1,0 +1,94 @@
+<!-- profile details -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <link rel="stylesheet" href="../css/user.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://kit.fontawesome.com/1d390f795c.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js" integrity="sha512-efUTj3HdSPwWJ9gjfGR71X9cvsrthIA78/Fvd/IN+fttQVy7XWkOAXb295j8B3cmm/kFKVxjiNYzKw9IQJHIuQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div class="main-div">
+        <header class="blend">
+            <nav class="navbar">
+                <div class="hero"><a href="/"><img src="../assets/logo.png" alt=""></a></div>
+                <a href="javascript:void(0);" class="toggle-button" id="nav-toggle" onclick="navbarDrop()">
+                    <i class="fa fa-bars fa-xl"></i>
+                </a>
+                <div class="navbar-links">
+                    <ul>
+                        <li><a href="dashboard">Home</a></li>
+                        <li><a href="cart">Cart</a></li>
+                        <li><a href="about">About</a></li>
+                        <li><a href="contact">Contact Us</a></li>
+                        <li><a href="http://localhost:8501/">Prediction</a></li>
+                        <li><a href="#"  onclick="userDrop()">
+                            <i class="fa-solid fa-circle-user fa-xl"></i>
+                            </a>
+                            <div class="dropdown">
+                                <a class="dropdown-item" href="/user">User</a>
+                                <a class="dropdown-item" onclick="logout()">Logout</a>
+                            </div>
+                        </li>
+                    </ul>                    
+                </div>
+            </nav>
+        </header>
+        <main class="">
+            <div class="form">
+                <div class="col-1">
+                    <h3 class="heading">User Details</h3>
+                    <div class="user-dp">
+                        <img src="../assets/default-user.png" onclick="updateProfilePic()" id="user-profile-pic">
+                        <span>User</span>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <label class="label">Full Name<br>
+                        <input type="text" id="user-fullname" class="field" placeholder="Full Name" disabled>
+                    </label>
+                    <label class="label">Mobile Number<br>
+                        <input type="text" id="user-mobile" class="field" placeholder="Mobile Number" disabled>
+                    </label>
+                    <label class="label">Email ID<br>
+                        <input type="email" id="user-email" class="field" placeholder="Email ID" disabled>
+                    </label>
+                    <label class="label">Gender<br>
+                        <!-- <input type="text" id="user-gender" class="field" placeholder="Gender"> -->
+                        <select id="user-gender" class="field" disabled>
+                            <option value="" hidden>None</option>
+                            <option value="Male" >Male</option>
+                            <option value="Female">Female</option>
+                          </select>
+                    </label>
+                    <label class="label">Date of Birth<br>
+                        <input type="date" id="user-dob" class="field" placeholder="Gender" disabled>
+                    </label>
+                    <label class="label">Location<br>
+                        <textarea id="user-address"  class="field" plaholder="Location / Address" disabled></textarea>
+                    </label>
+                    <button type="button" class="btn" id="edit-details-btn" onclick="edit()">Edit-Details</button>
+                    <button type="button" class="btn hide" id="update-details-btn" onclick="update()">Update-Details</button>
+                </div>
+            </div>
+        </main>
+        <footer class="blend">
+            <ul class="">
+                <li><i class="fa-brands fa-meta"></i></li>
+                <li><i class="fa-brands fa-twitter"></i></li>
+                <li><i class="fa-brands fa-at"></i></li>
+            </ul>
+        </footer>
+    </div>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/logout.js"></script>
+    <script src="../js/user.js"></script>
+</body>
+</html>
+

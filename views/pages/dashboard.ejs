@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <script src="https://kit.fontawesome.com/1d390f795c.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js" integrity="sha512-efUTj3HdSPwWJ9gjfGR71X9cvsrthIA78/Fvd/IN+fttQVy7XWkOAXb295j8B3cmm/kFKVxjiNYzKw9IQJHIuQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div class="main-div">
+        <header class="blend">
+            <nav class="navbar">
+                <div class="hero"><a href="/"><img src="../assets/logo.png" alt=""></a></div>
+                <a href="javascript:void(0);" class="toggle-button" id="nav-toggle" onclick="navbarDrop()">
+                    <i class="fa fa-bars fa-xl"></i>
+                </a>
+                <div class="navbar-links">
+                    <ul>
+                        <li><a href="dashboard">Home</a></li>
+                        <li><a href="cart">Cart</a></li>
+                        <li><a href="about">About</a></li>
+                        <li><a href="contact">Contact Us</a></li>
+                        <li><a href="http://localhost:8501/">Prediction</a></li>
+                        <li><a href="#" onclick="userDrop()">
+                            <i class="fa-solid fa-circle-user fa-xl"></i>
+                            </a>
+                            <div class="dropdown">
+                                <a class="dropdown-item" href="/user">User</a>
+                                <a class="dropdown-item" onclick="logout()">Logout</a>
+                            </div>
+                        </li>
+                    </ul>                    
+                </div>
+            </nav>
+        </header>
+        <main class="">
+            <!-- <section class="item-section">
+                <h2>Fresh Veggies</h2>
+                <div class="container-flex">
+                    <div class="container-item">
+                        <div class="image-content">
+                            <img src="../assets/apple.jpg" alt="" id="item-img-1">
+                        </div>
+                        <div class="item-content" id="item-content-1">
+                            <h3 class="item-name" id="item-name-1">Apple</h3>
+                            <div class="item-info">
+                                <span><span id="item-quantity-1">1</span> Kg</span>
+                                <button class="btn"><i class="fa-solid fa-cart-plus fa-2xl"></i></button>
+                                <span><i class="fa-solid fa-indian-rupee-sign"></i> <span id="item-price-1">10.00</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-item">
+                        <div class="image-content">
+                            <img src="../assets/apple.jpg" alt="" id="item-img-1">
+                        </div>
+                        <div class="item-content" id="item-content-1">
+                            <h3 class="item-name" id="item-name-1">Apple</h3>
+                            <div class="item-info">
+                                <span><span id="item-quantity-1">1</span> Kg</span>
+                                <button class="btn"><i class="fa-solid fa-cart-plus fa-2xl"></i></button>
+                                <span><i class="fa-solid fa-indian-rupee-sign"></i> <span id="item-price-1">100.00</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-item">
+                        <div class="image-content">
+                            <img src="../assets/apple.jpg" alt="" id="item-img-1">
+                        </div>
+                        <div class="item-content" id="item-content-1">
+                            <h3 class="item-name" id="item-name-1">Apple</h3>
+                            <div class="item-info">
+                                <span><span id="item-quantity-1">1</span> Kg</span>
+                                <button class="btn"><i class="fa-solid fa-cart-plus fa-2xl"></i></button>
+                                <span><i class="fa-solid fa-indian-rupee-sign"></i> <span id="item-price-1">100.00</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-item">
+                        <div class="image-content">
+                            <img src="../assets/apple.jpg" alt="" id="item-img-1">
+                        </div>
+                        <div class="item-content" id="item-content-1">
+                            <h3 class="item-name" id="item-name-1">Apple</h3>
+                            <div class="item-info">
+                                <span><span id="item-quantity-1">1</span> Kg</span>
+                                <button class="btn"><i class="fa-solid fa-cart-plus fa-2xl"></i></button>
+                                <span><i class="fa-solid fa-indian-rupee-sign"></i> <span id="item-price-1">100.00</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-item">
+                        <div class="image-content">
+                            <img src="../assets/apple.jpg" alt="" id="item-img-1">
+                        </div>
+                        <div class="item-content" id="item-content-1">
+                            <h3 class="item-name" id="item-name-1">Apple</h3>
+                            <div class="item-info">
+                                <span><span id="item-quantity-1">1</span> Kg</span>
+                                <button class="btn"><i class="fa-solid fa-cart-plus fa-2xl"></i></button>
+                                <span><i class="fa-solid fa-indian-rupee-sign"></i> <span id="item-price-1">10.00</span></span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+            
+            <section class="item-section">
+                <h2>Fresh Fruits</h2>
+                <div class="container-flex">
+                    <div class="container-item">
+                        <div class="image-content">
+                            <img src="../assets/cauli.jpg" alt="" id="item-img-1">
+                        </div>
+                        <div class="item-content" id="item-content-1">
+                            <h3 class="item-name" id="item-name-1">Apple</h3>
+                            <div class="item-info">
+                                <span><span id="item-quantity-1">1</span> Kg</span>
+                                <button class="btn"><i class="fa-solid fa-cart-plus fa-2xl"></i></button>
+                                <span><i class="fa-solid fa-indian-rupee-sign"></i> <span id="item-price-1">10.00</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-item">
+                        <div class="image-content">
+                            <img src="../assets/grapes.jpeg" alt="" id="item-img-1">
+                        </div>
+                        <div class="item-content" id="item-content-1">
+                            <h3 class="item-name" id="item-name-1">Apple</h3>
+                            <div class="item-info">
+                                <span><span id="item-quantity-1">1</span> Kg</span>
+                                <button class="btn"><i class="fa-solid fa-cart-plus fa-2xl"></i></button>
+                                <span><i class="fa-solid fa-indian-rupee-sign"></i> <span id="item-price-1">100.00</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-item">
+                        <div class="image-content">
+                            <img src="../assets/apple.jpg" alt="" id="item-img-1">
+                        </div>
+                        <div class="item-content" id="item-content-1">
+                            <h3 class="item-name" id="item-name-1">Apple</h3>
+                            <div class="item-info">
+                                <span><span id="item-quantity-1">1</span> Kg</span>
+                                <button class="btn"><i class="fa-solid fa-cart-plus fa-2xl"></i></button>
+                                <span><i class="fa-solid fa-indian-rupee-sign"></i> <span id="item-price-1">100.00</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-item">
+                        <div class="image-content">
+                            <img src="../assets/apple.jpg" alt="" id="item-img-1">
+                        </div>
+                        <div class="item-content" id="item-content-1">
+                            <h3 class="item-name" id="item-name-1">Apple</h3>
+                            <div class="item-info">
+                                <span><span id="item-quantity-1">1</span> Kg</span>
+                                <button class="btn"><i class="fa-solid fa-cart-plus fa-2xl"></i></button>
+                                <span><i class="fa-solid fa-indian-rupee-sign"></i> <span id="item-price-1">100.00</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-item">
+                        <div class="image-content">
+                            <img src="../assets/apple.jpg" alt="" id="item-img-1">
+                        </div>
+                        <div class="item-content" id="item-content-1">
+                            <h3 class="item-name" id="item-name-1">Apple</h3>
+                            <div class="item-info">
+                                <span><span id="item-quantity-1">1</span> Kg</span>
+                                <button class="btn"><i class="fa-solid fa-cart-plus fa-2xl"></i></button>
+                                <span><i class="fa-solid fa-indian-rupee-sign"></i> <span id="item-price-1">10.00</span></span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section> -->
+        </main>
+        <footer class="blend">
+            <ul class="">
+                <li><i class="fa-brands fa-meta"></i></li>
+                <li><i class="fa-brands fa-twitter"></i></li>
+                <li><i class="fa-brands fa-at"></i></li>
+            </ul>
+        </footer>
+    </div>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/logout.js"></script>
+</body>
+</html>

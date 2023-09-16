@@ -1,0 +1,89 @@
+$show dbs
+
+$use 'dbname'
+
+show collections --> tables inside database
+
+db.dropDatabase() --> deletes database
+
+``````````````````````````````````````````````
+
+****************"users" -> collection names*******
+
+db.users.insertOne(JSON OBJ)
+
+db.users.find() --> returns all the records inside users collection
+
+db.users..insertMany([JSON, JSON, ...])
+
+
+db.users.find().limit(no. of records)
+db.users.find().sort({name : 1}) --> sort by name in the objects
+db.users.find().sort({name : -1}) --> sort by name in the objects in reverse order
+
+
+db.users.find().skip(2) ---> skips the first 2 elements 
+db.users.find({ name : "Vivek", age : 22 }, {name : 1, age : 1}) ---> the Second object tells which params to fetch from db
+db.users.find({ name : "Vivek", age : 22 }, {name : 1, age : 1,  _id : 0}) ---> don't returns the ID of object
+
+
+`````````````````````````````````````````````````
+Complex Queries
+
+db.users.find({name : {$eq : "Vivek"}}) ---> $eq = check for equality
+db.users.find({name : {$neq : "Vivek"}}) ---> $neq = check for not equality 
+
+$gte, $gt, $lt, $lte
+
+
+db.users.find({name : {$in : ["Vivek", "ABC", "XYZ", ... ]}}) ---> $in = if value in the list.
+db.users.find({name : {$nin : ["Vivek", "ABC", "XYZ", ... ]}}) ---> $nin = if value not in the list.
+
+
+
+db.users.find({age : { $exists : true }}) ---> $exists = all the object having age property will be returned.
+
+db.users.find({age : { age : {$gte : 20, $lte : 40}, name : "Vivek" }}) --- >age && name
+
+db.users.find({ $and : [ { age : 26}, { name : "Vivek"}] }) ---> another way to perform AND on queries
+
+db.users.find({ $or : [ { age : 26}, { name : "Vivek"}] }) ---> way to perform OR on queries
+
+db.users.find({ $not : { { age : 26} }}) ---> way to perform NOT on queries
+
+db.users.find({ $expr : { $gt : ["$debt" , "$balance"] }}) --> debt and balance are two columns in the collection or and expr is used to create a expression by merging different queries
+
+
+db.users.find({awards: {$elemMatch: {award:'National Medal', year:1975}}})
+
+db.users.find({"address.street" : "123 Maun St"})
+
+db.users.findOne({"address.street" : "123 Maun St"}) -->returns the first user
+
+db.users.coutDocuments({age : 23}) ---> returns the number of records
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+db.users.updateOne({age : 26}, {$set : { age : 27}}) 
+
+db.users.updateOne({ age : 25 }, { $inc : {age : 3}}) --> age =  25 + 3 
+
+db.users.updateOne({age : 5}, { $rename : { name : "firstNmae"}}) --> renames the attribute name;
+
+db.users.updateOne({age : 5}, { $unset : { name : ""}}) --> removes the property
+
+db.users.updateOne({age : 5 }, { $push : { hobbies : "swimming"}}) --->inserts swimming to the list of hobbies
+
+db.users.updateOne({age : 5 }, { $pull : { hobbies : "swimming"}}) --->removes swimming to the list of hobbies
+
+db.users.updateMany({ address : { $exists : true}}, { $unset : { address : ""}} )
+
+
+db.users.replaceOne({ age : 30} , { name : "Vivek" })
+
+
+`````````````````````````````````````````````````````````````````````````````````````````````````````````````
+
+db.users.deleteOne({name : "Vivek"}) --> deletes the record which have name == Vivek
+

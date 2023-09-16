@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cart</title>
+        <link rel="stylesheet" href="../css/cart.css">
+
+        <script src="https://kit.fontawesome.com/1d390f795c.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js" integrity="sha512-efUTj3HdSPwWJ9gjfGR71X9cvsrthIA78/Fvd/IN+fttQVy7XWkOAXb295j8B3cmm/kFKVxjiNYzKw9IQJHIuQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div class="main-div">
+        <header class="blend">
+            <nav class="navbar">
+                <div class="hero"><a href="/"><img src="../assets/logo.png" alt=""></a></div>
+                <a href="javascript:void(0);" class="toggle-button" id="nav-toggle" onclick="navbarDrop()">
+                    <i class="fa fa-bars fa-xl"></i>
+                </a>
+                <div class="navbar-links">
+                    <ul>
+                        <li><a href="dashboard">Home</a></li>
+                        <li><a href="cart">Cart</a></li>
+                        <li><a href="about">About</a></li>
+                        <li><a href="contact">Contact Us</a></li>
+                        <li><a href="http://localhost:8501/">Prediction</a></li>
+                        <li><a href="#"  onclick="userDrop()">
+                            <i class="fa-solid fa-circle-user fa-xl"></i>
+                        </a>
+                            <div class="dropdown">
+                                <a class="dropdown-item" href="/user">User</a>
+                                <a class="dropdown-item" onclick="logout()">Logout</a>
+                            </div>
+                        </li>
+                    </ul>                    
+                </div>
+            </nav>
+        </header>
+        <main class="blend">
+            <div class="container">
+                <div id="cart-content">
+                    <!-- <div id="promo">
+                        <label for="promo-code" class="label">Enter a Promotional Code<br>
+                            <input type="text" id="promo-code" class="field" placeholder="Your Code">
+                        </label>
+                        <button class="btn">Apply</button>
+                    </div> -->
+                    <div id="cart-items">
+                        <!-- items table -->
+                        <div class="basket-labels">
+                            <ul>
+                                <li class="item-lab item-heading">Item</li>
+                                <li class="price-lab">Price</li>
+                                <li class="quantity-lab">Quantity</li>
+                                <li class="subtotal-lab">Subtotal</li>
+                            </ul>
+                        </div>
+                        
+                        
+                        <!-- ITEM 1 -->
+                        <!-- <div class="basket-item">
+                            <div class="item item-desc">
+                                <img src="../assets/apple.jpg" alt="">
+                                <div class="item-desc">
+                                    <span class="item-title">Apple</span>
+                                    <small class="item-info">
+                                        From XYZ Farm
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="price-div">
+                                <span class="price">490</span>
+                            </div>
+                            <div class="quantity-control">
+                                <span class="quantity">1</span>
+                                <div>
+                                    <span><i class="fa-solid fa-plus fa-xl"></i></span>
+                                    <span><i class="fa-solid fa-minus fa-xl"></i></span></i>
+                                </div>
+                            </div>
+                            <div class="subtotal-div">
+                                <span class="price">490</span>
+                                <button class="remove">Remove</button>
+                            </div>
+                        </div> -->
+                        
+                        <!-- ITEM END -->
+                        <!-- <div class="basket-item">
+                            <div class="item item-desc">
+                                <img src="../assets/apple.jpg" alt="">
+                                <div class="item-desc">
+                                    <span class="item-title">Apple</span>
+                                    <small class="item-info">
+                                        From XYZ Farm
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="price-div">
+                                <span class="price">490</span>
+                            </div>
+                            <div class="quantity-control">
+                                <span class="quantity">1</span>
+                                <div>
+                                    <span><i class="fa-solid fa-plus fa-xl"></i></span>
+                                    <span><i class="fa-solid fa-minus fa-xl"></i></span></i>
+                                </div>
+                            </div>
+                            <div class="subtotal-div">
+                                <span class="price">490</span>
+                                <button class="remove">Remove</button>
+                            </div>
+                        </div> -->
+                    
+                    </div>
+                </div>
+                <div id="cart-total">
+                    <!-- <span>Items in your Bag</span>
+                        <div class="total-subsection">
+                            <div class="subtotal">
+                                <span>Subtotal</span>
+                                <span id="cart-total-subtotal" class="price">120</span>
+                            </div>
+                            <div class="subtotal small">
+                                <span>GST (18%)</span>
+                                <span id="cart-total-subtotal" class="price">120</span>
+                            </div>
+                            <div class="subtotal small">
+                                <span>Delivery (5%)</span>
+                                <span id="cart-total-subtotal" class="price">120</span>
+                            </div>
+                            <div class="cart-total-promo"></div>
+                        </div>
+                        <div class="grand-total">
+                            <h4>TOTAL</h4>
+                        <span id="cart-total-final-price" class="price">120</span>
+                    </div>
+                    <button class="remove">GO TO SECURE CHECKOUT</button> -->
+                </div>
+            </div>
+        </main>
+        <footer class="blend">
+            <ul class="">
+                <li><i class="fa-brands fa-meta"></i></li>
+                <li><i class="fa-brands fa-twitter"></i></li>
+                <li><i class="fa-brands fa-at"></i></li>
+            </ul>
+        </footer>
+    </div>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/logout.js"></script>
+    <script src="../js/cart.js"></script>
+</body>
+</html>
+

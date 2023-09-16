@@ -1,0 +1,18 @@
+Cart Page : 
+
+Move the calculation of gst, and delivery to the server
+
+
+Checkout:
+
+The cart data will be gathered in the server and formatted.
+
+On Success{
+1. First check the items quantities, if they are still available then go to 2. else goto 4.
+2. create / update the  Order History of the user, also update the quantity of the items.
+3. redirect back to cart and display success message. 
+
+4. cancel the order, start the refund process, redirect back to cart and display item ran out of stock.
+} 
+
+On Cancel/ reject " redirect back to the cart and display Cancel message"

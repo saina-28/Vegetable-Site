@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veggies</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="https://kit.fontawesome.com/1d390f795c.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js" integrity="sha512-efUTj3HdSPwWJ9gjfGR71X9cvsrthIA78/Fvd/IN+fttQVy7XWkOAXb295j8B3cmm/kFKVxjiNYzKw9IQJHIuQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div class="main-div">
+        <header class="blend">
+            <nav class="navbar">
+                <div class="hero"><a href="/"><img src="./assets/logo.png" alt=""></a></div>
+                <a href="javascript:void(0);" class="toggle-button" id="nav-toggle" onclick="navbarDrop()">
+                    <i class="fa fa-bars fa-xl"></i>
+                </a>
+                <div class="navbar-links">
+                    <ul>
+                        <li><a href="dashboard">Home</a></li>
+                        <li><a href="about">About</a></li>
+                        <li><a href="contact">Contact Us</a></li>
+                        <li><a href="http://localhost:8501/">Prediction</a></li>
+                        <!-- <li><a href="#"  onclick="userDrop()">
+                            <i class="fa-solid fa-circle-user fa-xl"></i>
+                            </a>
+                            <div class="dropdown">
+                                <a class="dropdown-item" href="#">User</a>
+                                <a class="dropdown-item" href="#">Logout</a>
+                            </div>
+                        </li> -->
+                    </ul>                    
+                </div>
+            </nav>
+        </header>
+        <main class="blend">
+            <div class="form signin-form" id="signin-form">
+                <h3 class="heading">Sign-In</h3>
+                <label for="email" class="label">Email<br>
+                    <input type="email" id="signin-email" class="field" placeholder="Email">
+                </label>
+                
+                <label for="password" class="label">Password<br>
+                    <input type="password" id="signin-password" class="field" placeholder="Password">
+                </label>
+                
+                <button class="btn" id="signin" onclick="login()" type="submit">Sign in</button>
+                
+                <label class="label">
+                    <input type="checkbox" name="" id="remember" class="check" value="remember"><span>Remember me</span>
+                </label>
+                <small>Don't have an account? <a href="#" onclick="showSignup()" >Sign-Up</a></small>
+            </div>
+            <div class="form signup-form" id="signup-form">
+                <h3 class="heading">Sign-Up</h3>
+
+                <label for="signup-name" class="label">Name<br>
+                    <input type="text" id="signup-name" class="field" placeholder="Name">
+                </label>
+                <label for="signup-email" class="label">Email<br>
+                    <input type="email" id="signup-email" class="field" placeholder="Email">
+                </label>
+                <label for="signup-password" class="label">Password<br>
+                    <input type="password" id="signup-password" class="field" placeholder="Password">
+                </label>
+                
+                <label for="signup-password" class="label">Confirm Password<br>
+                    <input type="password" id="signup-confirm-password" class="field" placeholder="Confirm Password">
+                </label>
+                <button class="btn" id="signup" onclick="signup()" type="submit">Sign up</button>
+                <small>Already have an account? <a href="#" onclick="showSignin()">Sign-In</a></small>
+            </div>
+        </main>
+        <footer class="blend">
+            <ul class="">
+                <li><i class="fa-brands fa-meta"></i></li>
+                <li><i class="fa-brands fa-twitter"></i></li>
+                <li><i class="fa-brands fa-at"></i></li>
+            </ul>
+        </footer>
+    </div>z
+    <script src="./js/index.js"></script>
+    <script src="./js/navbar.js"></script>
+</body>
+</html>

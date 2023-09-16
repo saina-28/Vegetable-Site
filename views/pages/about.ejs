@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+    <link rel="stylesheet" href="../css/about.css">
+
+    <script src="https://kit.fontawesome.com/1d390f795c.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js" integrity="sha512-efUTj3HdSPwWJ9gjfGR71X9cvsrthIA78/Fvd/IN+fttQVy7XWkOAXb295j8B3cmm/kFKVxjiNYzKw9IQJHIuQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div class="main-div">
+        <header class="blend">
+            <nav class="navbar">
+                <div class="hero"><a href="/"><img src="../assets/logo.png" alt=""></a></div>
+                <a href="javascript:void(0);" class="toggle-button" id="nav-toggle" onclick="navbarDrop()">
+                    <i class="fa fa-bars fa-xl"></i>
+                </a>
+                <div class="navbar-links">
+                    <ul>
+                        <li><a href="dashboard">Home</a></li>
+                        <% if (auth) { %>
+                            <li><a href="cart">Cart</a></li>
+                        <% } %>
+                        <li><a href="about">About</a></li>
+                        <li><a href="contact">Contact Us</a></li>
+                        <li><a href="http://localhost:8501/">Prediction</a></li>
+
+                        <% if (auth) { %>
+                            <li><a href="#"  onclick="userDrop()">
+                                <i class="fa-solid fa-circle-user fa-xl"></i>
+                                </a>
+                                <div class="dropdown">
+                                    <a class="dropdown-item" href="/user">User</a>
+                                    <a class="dropdown-item" onclick="logout()">Logout</a>
+                                </div>
+                            </li>
+                        <% } %>
+                    </ul>                    
+                </div>
+            </nav>
+        </header>
+        <main class="">
+            <h1><span>About </span>us</h1>
+            <div class="container-flex">
+                <div class="image-container">
+                    <img src="../assets/about.jpg" alt="">
+                    <h3>Best Vegetable Sellers</h3>
+                </div>
+                <section>
+                    <h1>Why choose us?</h1>
+                    <p>VeggieVilla is the best vegetable seller in town. We run B2B enterprise which provides fresh, organic, and best quality vegetables to the restaurants and caterers, from fields to the tables.</p>
+                    <span><button type="button" class="btn" onclick="location.href='/contact'">Contact us</button>
+                </section>
+            </div>
+        </main>
+        <footer class="blend">
+            <ul class="">
+                <li><i class="fa-brands fa-meta"></i></li>
+                <li><i class="fa-brands fa-twitter"></i></li>
+                <li><i class="fa-brands fa-at"></i></li>
+            </ul>
+        </footer>
+    </div>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/logout.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+const taxRate = await stripe.taxRates.create({
+    display_name: 'GST',
+    description: 'GST India',
+    jurisdiction: 'IN',
+    percentage: 18,
+    inclusive: false
+    });
+
+
+
+    stripe listen --forward-to localhost:3000/checkout/webhook
